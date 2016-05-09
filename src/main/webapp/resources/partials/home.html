@@ -1,15 +1,17 @@
-<div>
-	<div><input type="text" ng-model="searchKey"><button ng-click="searchPinCode()">Search Pin</button></div>
-	<div ng-if="pincodes">
+<div class="jumbotron vertical-center">
+<div class="container">
+	<div><input class = "input-lg" type="text" ng-model="searchKey"><button class="btn btn-primary btn-lg" ng-click="searchPinCode()">Search Pin</button></div>
 	
-	<table>
+	<div ng-if="pincodes" >
+	<table class="table table-bordered" style="margin-top:25px">
 	<tr>
-	<th>Pin Code</th><th>City</th><th>State</th>
+	<th>Pin</th><th>Area</th><th>District</th><th>State</th>
 	</tr>
 	<tr ng-repeat="x in pincodes">
-	<td>{{x.pin}}</td><td>{{x.city}}</td><td>{{x.state}}</td>
+	<td>{{x.pinCode}}</td><td>{{x.area}}</td><td>{{x.district}}</td><td>{{x.state}}</td>
 	</tr>
 	</table>
 	</div>
 		<span>{{errorMessage}}</span>
+		</div>
 </div>

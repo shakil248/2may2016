@@ -2,12 +2,17 @@ package com.khan.pincode.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="S")
 public class S {
-	
+	@Id 
+	@GeneratedValue
+	@Column(name = "id")
+	private int id;
 	@Column(name="pin_code")
 	private String pinCode;
 	@Column(name="city")

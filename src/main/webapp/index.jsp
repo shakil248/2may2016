@@ -2,7 +2,7 @@
 <html ng-app="pinCodeApp">
 <title>Search Pin Code</title>
 <head>
-<spring:url value="/resources/lib/css/bootstrap.css" var="bootstrapCSS" />
+<spring:url value="/resources/lib/css/bootstrap.min.css" var="bootstrapCSS" />
 <spring:url value="/resources/lib/angular/angular.js" var="angularJS" />
 <spring:url value="/resources/lib/angular/angular-route.js" var="angularRouteJS" />
 <spring:url value="/resources/js/app.js" var="appJS" />
@@ -19,8 +19,6 @@
     
 </head>
 <body>
-<h2>Hello World!</h2>
-
 <div ng-view></div>
 </body>
 </html>

@@ -15,15 +15,23 @@ import com.khan.pincode.service.PinCodeService;
 
 @RestController
 public class PinCodeController {
-//	
+
 	@Autowired
 	PinCodeService pinCodeService;
-	
+
+	private static long pinCodeHitCount=0;
 	
 	 	@RequestMapping(value = "/getpin", method = RequestMethod.GET)
 	    public ResponseEntity<List<?>>  getPin(@RequestParam String searchKey) {
+	 		pinCodeHitCount++;
 		 List<?> pinCodeList = pinCodeService.getPinCode(searchKey);
 		 return new ResponseEntity<List<?>>(pinCodeList, HttpStatus.OK);
+		   
+	    }
+	 	
+	 	@RequestMapping(value = "/getPinCodeHitCount", method = RequestMethod.GET)
+	    public long  getPinCodeHitCount() {
+		 return pinCodeHitCount;
 		   
 	    }
 

@@ -27,37 +27,37 @@ public class PinCodeServiceImpl implements PinCodeService {
 	
 	
 	private void initializeTablelMap(){
-		tableMap.put('a',"com.sogeti.petstore.model.A" );
-		tableMap.put('b',"com.sogeti.petstore.model.B" );
-		tableMap.put('c',"com.sogeti.petstore.model.C" );
-		tableMap.put('d',"com.sogeti.petstore.model.D" );
-		tableMap.put('e',"com.sogeti.petstore.model.E" );
-		tableMap.put('f',"com.sogeti.petstore.model.F" );
-		tableMap.put('g',"com.sogeti.petstore.model.G" );
-		tableMap.put('h',"com.sogeti.petstore.model.H" );
-		tableMap.put('i',"com.sogeti.petstore.model.I" );
-		tableMap.put('j',"com.sogeti.petstore.model.J" );
-		tableMap.put('k',"com.sogeti.petstore.model.K" );
-		tableMap.put('l',"com.sogeti.petstore.model.L" );
-		tableMap.put('m',"com.sogeti.petstore.model.M" );
-		tableMap.put('n',"com.sogeti.petstore.model.N" );
-		tableMap.put('o',"com.sogeti.petstore.model.O" );
-		tableMap.put('p',"com.sogeti.petstore.model.P" );
-		tableMap.put('q',"com.sogeti.petstore.model.Q" );
-		tableMap.put('r',"com.sogeti.petstore.model.R" );
-		tableMap.put('s',"com.sogeti.petstore.model.S" );
-		tableMap.put('t',"com.sogeti.petstore.model.T" );
-		tableMap.put('u',"com.sogeti.petstore.model.U" );
-		tableMap.put('v',"com.sogeti.petstore.model.V" );
-		tableMap.put('w',"com.sogeti.petstore.model.W" );
-		tableMap.put('x',"com.sogeti.petstore.model.X" );
-		tableMap.put('y',"com.sogeti.petstore.model.Y" );
-		tableMap.put('z',"com.sogeti.petstore.model.Z" );
+		tableMap.put('a',"com.khan.pincode.model.A" );
+		tableMap.put('b',"com.khan.pincode.model.B" );
+		tableMap.put('c',"com.khan.pincode.model.C" );
+		tableMap.put('d',"com.khan.pincode.model.D" );
+		tableMap.put('e',"com.khan.pincode.model.E" );
+		tableMap.put('f',"com.khan.pincode.model.F" );
+		tableMap.put('g',"com.khan.pincode.model.G" );
+		tableMap.put('h',"com.khan.pincode.model.H" );
+		tableMap.put('i',"com.khan.pincode.model.I" );
+		tableMap.put('j',"com.khan.pincode.model.J" );
+		tableMap.put('k',"com.khan.pincode.model.K" );
+		tableMap.put('l',"com.khan.pincode.model.L" );
+		tableMap.put('m',"com.khan.pincode.model.M" );
+		tableMap.put('n',"com.khan.pincode.model.N" );
+		tableMap.put('o',"com.khan.pincode.model.O" );
+		tableMap.put('p',"com.khan.pincode.model.P" );
+		tableMap.put('q',"com.khan.pincode.model.Q" );
+		tableMap.put('r',"com.khan.pincode.model.R" );
+		tableMap.put('s',"com.khan.pincode.model.S" );
+		tableMap.put('t',"com.khan.pincode.model.T" );
+		tableMap.put('u',"com.khan.pincode.model.U" );
+		tableMap.put('v',"com.khan.pincode.model.V" );
+		tableMap.put('w',"com.khan.pincode.model.W" );
+		tableMap.put('x',"com.khan.pincode.model.X" );
+		tableMap.put('y',"com.khan.pincode.model.Y" );
+		tableMap.put('z',"com.khan.pincode.model.Z" );
 	}
 	public List<?> getPinCode(String searchKey) {
 		if(null!=searchKey && searchKey!=""){
-			Character c = searchKey.charAt(0);
-			String className =  tableMap.get(c);
+			Character c = searchKey.trim().charAt(0);
+			String className =  tableMap.get(Character.toLowerCase(c));
 			try {
 				return pinCodeDAO.getPinCode(Class.forName(className), searchKey);
 			} catch (ClassNotFoundException e) {

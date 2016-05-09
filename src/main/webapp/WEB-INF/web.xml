@@ -7,24 +7,22 @@
 
 	<display-name>pincode</display-name>
 <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
     <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  <context-param>
-      <param-name>contextClass</param-name>
-      <param-value>
-         org.springframework.web.context.support.AnnotationConfigWebApplicationContext
-      </param-value>
-  </context-param>
-  <context-param>
-      <param-name>contextConfigLocation</param-name>
-      <param-value>com.khan.pincode.spring.AppConfig</param-value>
-  </context-param>
-
+<listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+ <context-param>
+        <param-name>contextClass</param-name>
+           <param-value>
+              org.springframework.web.context.support.AnnotationConfigWebApplicationContext
+          </param-value>
+       
+        </context-param>
+ <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>com.khan.pincode.spring.AppConfig</param-value>
+    </context-param>        
   <servlet>
       <servlet-name>pincode</servlet-name>
       <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
